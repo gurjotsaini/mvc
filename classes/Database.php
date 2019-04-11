@@ -10,7 +10,7 @@
         private $host       = 'localhost';
         private $username   = 'root';
         private $password   = 'root';
-        private $dbName     = 'mvc';
+        private $dbName     = 'myBlog';
 
         private $dbh;
         private $error;
