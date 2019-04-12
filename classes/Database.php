@@ -59,15 +59,15 @@
 
         public function execute() {
             return $this->stmt->execute();
-        }
+        } // end of execute method
 
         public function lastInsertId() {
             $this->dbh->lastInsertId();
-        }
+        } // end of lastInsertId method
 
         public function resultSet() {
             $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        }
+        } // end of resultSet method
     } // end of class
