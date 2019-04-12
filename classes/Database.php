@@ -3,7 +3,7 @@
      * Created by User: gurjot
      */
 
-    namespace classes;
+    //namespace classes;
 
     class Database
     {
@@ -59,6 +59,10 @@
 
         public function execute() {
             return $this->stmt->execute();
+        }
+
+        public function lastInsertId() {
+            $this->dbh->lastInsertId();
         }
 
         public function resultSet() {
