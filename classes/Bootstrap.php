@@ -3,15 +3,17 @@
      * Created by User: gurjot
      */
 
-    //namespace Classes;
-
     class Bootstrap
     {
         private $controller;
         private $action;
         private $request;
 
-        public function __construct ($request) {
+        /**
+         * Bootstrap constructor.
+         * @param $request
+         */
+        public function __construct ( $request) {
             $this->request = $request;
 
             // If there is no controller specified, redirect to home
@@ -39,6 +41,9 @@
             }
         } // End of __constructor method
 
+        /**
+         *
+         */
         public function createController() {
             // Check for the Controller Class
             if (class_exists($this->controller)) {

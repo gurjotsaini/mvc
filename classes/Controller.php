@@ -3,14 +3,17 @@
      * Created by User: gurjot
      */
 
-    //namespace Classes;
-
     abstract class Controller
     {
         protected $request;
         protected $action;
 
-        public function __construct ($action, $request) {
+        /**
+         * Controller constructor.
+         * @param $action
+         * @param $request
+         */
+        public function __construct ( $action, $request) {
             $this->action   = $action;
             $this->request  = $request;
         } // End of __constructor method

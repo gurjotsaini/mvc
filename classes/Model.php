@@ -8,6 +8,9 @@
         protected $dbh;
         protected $stmt;
 
+        /**
+         * Model constructor.
+         */
         public function __construct () {
             // Load configuration as an array. Use the actual location of your configuration file
             $config = parse_ini_file('config.ini');
@@ -24,11 +27,19 @@
             $this->dbh = new PDO($dsn, $config['username'], $config['password'], $options);
         } // end of __construct method
 
-        public function query($query) {
+        /**
+         * @param $query
+         */
+        public function query( $query) {
             $this->stmt = $this->dbh->prepare($query);
         } // end of query method
 
-        public function bind($param, $value, $type = null) {
+        /**
+         * @param      $param
+         * @param      $value
+         * @param null $type
+         */
+        public function bind( $param, $value, $type = null) {
             if (is_null($type)) {
                 switch (true) {
                     case is_int($value):
@@ -47,14 +58,23 @@
             $this->stmt->bindValue($param, $value, $type);
         } // end of bind method
 
+        /**
+         * @return mixed
+         */
         public function execute() {
             return $this->stmt->execute();
         } // end of execute method
 
+        /**
+         *
+         */
         public function lastInsertId() {
             $this->dbh->lastInsertId();
         } // end of lastInsertId method
 
+        /**
+         * @return mixed
+         */
         public function resultSet() {
             $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_ASSOC);

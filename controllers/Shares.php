@@ -5,6 +5,9 @@
 
     class Shares extends Controller
     {
+        /**
+         *
+         */
         protected function Index() {
             $viewModel = new ShareModel();
 
