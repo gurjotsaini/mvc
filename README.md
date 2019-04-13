@@ -15,7 +15,6 @@ A MVC based on php for better coding experience, developed in core PHP.
 1. Update and Delete data from your database
 2. A dedicated class to prevent sql Injection
 3. A dedicate class for transferring data to files or vice versa
-4. Login functionality
 
 and many more to come..
 
