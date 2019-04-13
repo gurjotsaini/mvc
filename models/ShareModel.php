@@ -5,6 +5,9 @@
 
     class ShareModel extends Model
     {
+        /**
+         * @return mixed
+         */
         public function Index() {
             $this->query('SELECT * FROM shares');
             $rows = $this->resultSet();
