@@ -24,4 +24,4 @@
 
     // Define URL
     define("ROOT_PATH", "/");
-    define("ROOT_URL", "/https://mvc.work:8890/");
+    define("ROOT_URL", "https://mvc.work:8890/");
