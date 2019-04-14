@@ -69,15 +69,23 @@
          *
          */
         public function lastInsertId() {
-            $this->dbh->lastInsertId();
+            return $this->dbh->lastInsertId();
         } // end of lastInsertId method
 
         /**
-         * @return mixed
+         * @return all values
          */
         public function resultSet() {
             $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 
         } // end of resultSet method
+
+        /**
+         * @return single value
+         */
+        public function single() {
+            $this->execute();
+            return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        }
     }
