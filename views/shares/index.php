@@ -1,7 +1,9 @@
 <div class="container h-100 d-flex justify-content-center">
     <div class="text-center my-auto">
         <br>
-        <a class="btn btn-success text-center btn-share" href="<?php echo ROOT_PATH; ?>Shares/add">Share Something</a>
+        <?php if (isset($_SESSION['is_logged_in'])) : ?>
+            <a class="btn btn-success text-center btn-share" href="<?php echo ROOT_PATH; ?>Shares/add">Share Something</a>
+        <?php endif; ?>
         <?php foreach ($viewModel as $item) : ?>
             <div class="jumbotron">
                 <h3><?php echo $item['title']; ?></h3>

@@ -4,6 +4,7 @@
         <title>MVC</title>
         <link rel="stylesheet" href="/assets/css/bootstrap.css">
         <link rel="stylesheet" href="/assets/css/style.css">
+        <script src="/assets/js/bootstrap.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,6 +48,8 @@
 
         <div class="container">
             <div class="row">
+                <br>
+                <?php Messages::display(); ?>
                 <?php require ($view); ?>
             </div>
         </div><!-- /.container -->

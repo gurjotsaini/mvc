@@ -16,6 +16,12 @@
 
             // Check for submission
             if ($post['submit']) {
+                // Check if fields are empty. If yes, display error message.
+                if ( $post['name'] == '' || $post['email'] == '' || $post['password'] == '' ) {
+                    Messages::setMessage('Please fill in all fields.', 'error');
+                    return;
+                }
+
                 // Insert into DB
                 $this->query('INSERT INTO users (name, email, password) VALUES(:name, :email, :password)');
                 $this->bind(':name', $post['name']);
@@ -63,7 +69,7 @@
                     // Redirect
                     header('Location: ' . ROOT_URL . 'Shares');
                 } else {
-                    echo 'Not Logged In';
+                    Messages::setMessage('Incorrect Login', 'error');
                 }
             }
             return;

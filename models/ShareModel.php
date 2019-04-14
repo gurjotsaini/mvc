@@ -21,6 +21,12 @@
 
             // Check for submission
             if ($post['submit']) {
+                // Check if fields are empty. If yes, display error message.
+                if ( $post['title'] == '' || $post['body'] == '' || $post['link'] == '' ) {
+                    Messages::setMessage('Please fill in all fields.', 'error');
+                    return;
+                }
+
                 // Insert into DB
                 $this->query('INSERT INTO shares (title, body, link, user_id) VALUES(:title, :body, :link, :user_id)');
                 $this->bind(':title', $post['title']);

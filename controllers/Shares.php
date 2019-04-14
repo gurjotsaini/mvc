@@ -14,6 +14,10 @@
         }
 
         protected function add() {
+            if ( !isset($_SESSION['is_logged_in']) ) {
+                header('Location: ' . ROOT_URL . 'Shares');
+            }
+
             $viewModel = new ShareModel();
             $this->returnView($viewModel->add(), true);
         }
