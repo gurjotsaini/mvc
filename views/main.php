@@ -23,12 +23,23 @@
                     </ul>
 
                     <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Register</a>
-                        </li>
+                        <?php if (isset($_SESSION['is_logged_in'])) : ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo ROOT_URL; ?>">
+                                    Welcome <?= $_SESSION['user_data']['name']; ?>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo ROOT_URL; ?>users/logout">Logout</a>
+                            </li>
+                        <?php else : ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Register</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
