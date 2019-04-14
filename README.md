@@ -16,9 +16,5 @@ A MVC based on php for better coding experience.
 
 **and many more to come..**
 
-#### _Note_:
-> Right now, this mvc is under development.  
-We are building and testing its route system.
-
 #### _Project Credits for Motivation & Styling_:
 Traversy Media, Bootstrap
